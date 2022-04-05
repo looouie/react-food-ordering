@@ -10,10 +10,15 @@
 }
 
 .productImage img {
-  width: 8rem;
+  width: 12rem;
   height: 100%;
 }
 
 .productDescription {
   text-align: left;
+}
+
+.price {
+  margin-top: 0.5rem;
+  font-weight: bold;
 }

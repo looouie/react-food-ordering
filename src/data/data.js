@@ -3,13 +3,14 @@ import oatBread from "../assets/oatBread.png";
 import raisinBread from "../assets/raisinBread.png";
 import sourdoughBread from "../assets/sourdoughBread.png";
 
-import lyxSemla from "../assets/LyxSemla.png";
+import semla from "../assets/semla.png";
 import wieneroll from "../assets/wieneroll.png";
 import cinnamonBun from "../assets/cinnamonbun.png";
 import croissant from "../assets/croissant.png";
 
 import princessCake from "../assets/princessCake.png";
 import budapestCake from "../assets/budapestCake.png";
+import leomonCheeseCake from "../assets/Cheescake_Lemon.png";
 
 export const breadList = [
   {
@@ -48,7 +49,7 @@ export const fikaList = [
     name: "Semla",
     description: "Traditional Swedish semla",
     price: 48,
-    image: lyxSemla,
+    image: semla,
   },
   {
     id: "fika-02",
@@ -88,5 +89,12 @@ export const cakeList = [
     description: "Swedish Budapest roll with hazelnut meringue",
     price: 45,
     image: budapestCake,
+  },
+  {
+    id: "cake-03",
+    name: "Lemon cheese cake",
+    description: "Fresh lemon cheese cake",
+    price: 45,
+    image: leomonCheeseCake,
   },
 ];
