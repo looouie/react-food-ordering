@@ -13,6 +13,15 @@ const ProductItem = (props) => {
         <div className={classes.description}>{product.description}</div>
         <div className={classes.price}>{product.price} kr</div>
       </div>
+
+      <form className={classes.form}>
+        <div className={classes.input}>
+          <div>+</div>
+          <input id={product.id} type="text" defaultValue="0" />
+          <div>-</div>
+        </div>
+        <button>Add</button>
+      </form>
     </li>
   ));
 };
