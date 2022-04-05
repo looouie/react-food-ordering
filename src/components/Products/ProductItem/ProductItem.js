@@ -1,27 +1,20 @@
 import classes from "./ProductItem.module.css";
-import cinnamonBun from "../../../assets/cinnamonbun.png";
 
-const ProductItem = () => {
-  const dummy = {
-    id: "bread-01",
-    name: "Cinnamon bun",
-    description: "delicious",
-    amount: 0,
-    price: 10,
-  };
+const ProductItem = (props) => {
+  const { productList } = props;
 
-  return (
+  return productList.map((product) => (
     <li className={classes.product}>
       <div className={classes.productImage}>
-        <img src={cinnamonBun} alt="product" />
+        <img src={product.image} alt="product" />
       </div>
       <div className={classes.productDescription}>
-        <h3>{dummy.name}</h3>
-        <div className={classes.description}>{dummy.description}</div>
-        <div className={classes.price}>{dummy.price}</div>
+        <h3>{product.name}</h3>
+        <div className={classes.description}>{product.description}</div>
+        <div className={classes.price}>{product.price}</div>
       </div>
     </li>
-  );
+  ));
 };
 
 export default ProductItem;
