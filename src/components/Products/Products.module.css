@@ -1,0 +1,11 @@
+.products {
+  max-width: 70rem;
+  width: 90%;
+  margin: 2rem auto;
+}
+
+.categoryName {
+  display: flex;
+  text-align: left;
+  padding: 0 2.5rem;
+}
