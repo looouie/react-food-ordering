@@ -1,4 +1,5 @@
 import classes from "./ProductItem.module.css";
+import { HiOutlinePlus, HiOutlineMinus } from "react-icons/hi";
 
 const ProductItem = (props) => {
   const { productList } = props;
@@ -16,9 +17,9 @@ const ProductItem = (props) => {
 
       <form className={classes.form}>
         <div className={classes.input}>
-          <div>+</div>
+          <HiOutlinePlus />
           <input id={product.id} type="text" defaultValue="0" />
-          <div>-</div>
+          <HiOutlineMinus />
         </div>
         <button>Add</button>
       </form>
