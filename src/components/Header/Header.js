@@ -1,5 +1,5 @@
 import classes from "./Header.module.css";
-import headerImage from "../../assets/baking.jpg";
+import baking from "../../assets/baking.jpg";
 
 const Header = (props) => {
   return (
@@ -8,7 +8,7 @@ const Header = (props) => {
         <h1>Louie's Bakery</h1>
       </header>
       <div className={classes.headerImage}>
-        <img src={headerImage} alt="HeaderImage" />
+        <img className={classes.desktopImage} src={baking} alt="HeaderImage" />
       </div>
     </>
   );
