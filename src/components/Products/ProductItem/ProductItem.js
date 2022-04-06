@@ -5,7 +5,7 @@ const ProductItem = (props) => {
   const { productList } = props;
 
   return productList.map((product) => (
-    <li className={classes.product} id={product.id}>
+    <li className={classes.product} key={product.id}>
       <div className={classes.productImage}>
         <img src={product.image} alt="product" />
       </div>
