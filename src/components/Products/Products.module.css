@@ -1,11 +1,24 @@
-.products {
+.container {
+  display: block;
+  margin: 0;
+  width: 100%;
   max-width: 70rem;
-  width: 90%;
+  text-align: center;
+}
+
+.products {
+  width: 80%;
   margin: 2rem auto;
 }
 
+.products ul {
+  margin: 0;
+  padding: 0;
+}
+
 .categoryName {
-  display: flex;
   text-align: left;
-  padding: 0 2.5rem;
+}
+
+@media screen and (min-width: 795px) {
 }
