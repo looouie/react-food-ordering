@@ -1,5 +1,5 @@
 import classes from "./ProductItem.module.css";
-import { HiOutlinePlus, HiOutlineMinus } from "react-icons/hi";
+import InputForm from "../../UI/InputForm";
 
 const ProductItem = (props) => {
   const { productList } = props;
@@ -14,15 +14,7 @@ const ProductItem = (props) => {
         <div className={classes.description}>{product.description}</div>
         <div className={classes.price}>{product.price} kr</div>
       </div>
-
-      <form className={classes.form}>
-        <div className={classes.input}>
-          <HiOutlinePlus />
-          <input id={product.id} type="text" defaultValue="0" />
-          <HiOutlineMinus />
-        </div>
-        <button>Add</button>
-      </form>
+      <InputForm id={product.id} />
     </li>
   ));
 };
