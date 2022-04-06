@@ -8,7 +8,7 @@ import wieneroll from "../assets/wieneroll.png";
 import cinnamonBun from "../assets/cinnamonbun.png";
 import croissant from "../assets/croissant.png";
 
-import princessCake from "../assets/princessCake.png";
+import brownie from "../assets/brownie.png";
 import budapestCake from "../assets/budapestCake.png";
 import leomonCheeseCake from "../assets/Cheescake_Lemon.png";
 
@@ -77,11 +77,10 @@ export const fikaList = [
 export const cakeList = [
   {
     id: "cake-01",
-    name: "Princess Cake",
-    description:
-      "Traditional Swedish cake layer by sponge cake, whipped cream, raspberry jam and covered by marzipan",
+    name: "Brownie",
+    description: "Chocolate brownie",
     price: 45,
-    image: princessCake,
+    image: brownie,
   },
   {
     id: "cake-02",
