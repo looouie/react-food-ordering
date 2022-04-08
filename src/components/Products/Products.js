@@ -7,19 +7,19 @@ import { breadList, fikaList, cakeList } from "../../data/data";
 const Products = () => {
   return (
     <div className={classes.container}>
-      <section className={classes.products}>
+      <section className={classes.products} id="section-bread">
         <h2 className={classes.categoryName}>Bread</h2>
         <ul>
           <ProductItem productList={breadList} />
         </ul>
       </section>
-      <section className={classes.products}>
+      <section className={classes.products} id="section-fika">
         <h2 className={classes.categoryName}>Fika</h2>
         <ul>
           <ProductItem productList={fikaList} />
         </ul>
       </section>
-      <section className={classes.products}>
+      <section className={classes.products} id="section-cake">
         <h2 className={classes.categoryName}>Fika</h2>
         <ul>
           <ProductItem productList={cakeList} />

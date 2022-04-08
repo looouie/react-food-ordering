@@ -1,9 +1,9 @@
 .container {
   display: block;
-  margin: 0;
   width: 100%;
   max-width: 70rem;
   text-align: center;
+  margin: 5rem auto;
 }
 
 .products {

@@ -25,18 +25,20 @@ const InputForm = ({ id }) => {
 
   return (
     <form className={classes.form} onSubmit={submitHandler}>
-      <div className={classes.input}>
+      <input
+        className={classes.input}
+        id={id}
+        type="number"
+        defaultValue="0"
+        min="0"
+        max="99"
+        ref={amountRef}
+      />
+
+      <div className={classes.amount}>
         <AiOutlinePlus
           className={classes.plusMinus}
           onClick={incrementHandler}
-        />
-        <input
-          id={id}
-          type="number"
-          defaultValue="0"
-          min="0"
-          max="99"
-          ref={amountRef}
         />
         <AiOutlineMinus
           className={classes.plusMinus}
