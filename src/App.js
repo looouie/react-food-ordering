@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Header />
-      <p>order now!</p>
+      <p className="p">order now!</p>
       <Products />
     </>
   );
