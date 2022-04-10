@@ -12,7 +12,6 @@ const ProductItem = (props) => {
     const productToAdd = { ...product, amount: amount };
 
     dispatch(cartActions.addOrIncrease(productToAdd));
-    console.log(productToAdd);
   };
 
   return productList.map((product) => (
