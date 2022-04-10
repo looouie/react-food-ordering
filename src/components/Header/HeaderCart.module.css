@@ -1,3 +1,25 @@
-.cartIcon {
+.button {
+  cursor: pointer;
+  color: white;
+  background-color: #4a4e69;
+  border: none;
+  border-radius: 5px;
+  width: 10rem;
+  height: 2.5rem;
   font-size: 1.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.button:hover,
+.button:active {
+  background-color: #272640;
+}
+
+.badge {
+  background-color: #9d4edd;
+  padding: 2px 15px;
+  border-radius: 20px;
+  font-weight: bold;
 }
