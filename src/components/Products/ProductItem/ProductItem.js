@@ -4,6 +4,10 @@ import InputForm from "../../UI/InputForm";
 const ProductItem = (props) => {
   const { productList } = props;
 
+  const addToCartHandler = (productId, amount) => {
+    // productList.product.id === productId
+  };
+
   return productList.map((product) => (
     <li className={classes.product} key={product.id}>
       <div className={classes.productImage}>
@@ -14,7 +18,10 @@ const ProductItem = (props) => {
         <div className={classes.description}>{product.description}</div>
         <div className={classes.price}>{product.price} kr</div>
       </div>
-      <InputForm id={product.id} />
+      <InputForm
+        id={product.id}
+        addToCart={addToCartHandler.bind(null, product.id)}
+      />
     </li>
   ));
 };
