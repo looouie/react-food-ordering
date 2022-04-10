@@ -1,11 +1,18 @@
 import classes from "./ProductItem.module.css";
 import InputForm from "../../UI/InputForm";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../../store/cart-slice";
 
 const ProductItem = (props) => {
   const { productList } = props;
 
-  const addToCartHandler = (productId, amount) => {
-    // productList.product.id === productId
+  const dispatch = useDispatch();
+
+  const addToCartHandler = (product, amount) => {
+    const productToAdd = { ...product, amount: amount };
+
+    dispatch(cartActions.addOrIncrease(productToAdd));
+    console.log(productToAdd);
   };
 
   return productList.map((product) => (
@@ -20,7 +27,7 @@ const ProductItem = (props) => {
       </div>
       <InputForm
         id={product.id}
-        addToCart={addToCartHandler.bind(null, product.id)}
+        addToCart={addToCartHandler.bind(null, product)}
       />
     </li>
   ));

@@ -2,7 +2,7 @@ import classes from "./InputForm.module.css";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { useRef } from "react";
 
-const InputForm = ({ id }) => {
+const InputForm = ({ id, addToCart }) => {
   const amountRef = useRef();
 
   const incrementHandler = () => {
@@ -19,8 +19,11 @@ const InputForm = ({ id }) => {
   };
 
   const submitHandler = (event) => {
+    const amountToAdd = parseInt(amountRef.current.value);
     event.preventDefault();
-    console.log("submit");
+    addToCart(amountToAdd);
+    // console.log(id + "amount =" + amountRef.current.value);
+    amountRef.current.value = 0;
   };
 
   return (
