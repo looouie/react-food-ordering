@@ -48,3 +48,7 @@ const cartSlice = createSlice({
 });
 
 export default cartSlice;
+
+// The actions of the slice to be used / dispatched
+const { actions } = cartSlice;
+export const cartActions = actions;
