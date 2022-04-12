@@ -1,5 +1,5 @@
 import classes from "./ProductItem.module.css";
-import InputForm from "../../UI/InputForm";
+import InputForm from "../../UI/InputForm/InputForm";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../../store/cart-slice";
 
