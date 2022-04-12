@@ -23,3 +23,11 @@
   border-radius: 20px;
   font-weight: bold;
 }
+
+@media (max-width: 795px) {
+  .button {
+    width: 8rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+}

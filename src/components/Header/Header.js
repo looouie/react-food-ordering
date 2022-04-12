@@ -6,7 +6,7 @@ const Header = (props) => {
   return (
     <>
       <header className={classes.header}>
-        <h1>Louie's Bakery</h1>
+        <p>Louie's Bakery</p>
         <HeaderCart />
       </header>
       <div className={classes.headerImage}>
