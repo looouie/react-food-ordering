@@ -1,3 +1,4 @@
+import ReactDOM from "react-dom";
 import classes from "./Overlay.module.css";
 
 const Overlay = () => {
@@ -8,8 +9,22 @@ const Overlay = () => {
   const OverlayModal = (props) => {
     return (
       <div className={classes.overlayModal}>
-        <div className={classes.content}>{props.children}</div>
+        <div className={classes.overlayContent}>{props.children}</div>
       </div>
+    );
+  };
+
+  const portalEl = document.getElementById("overlay");
+
+  const Overlay = (props) => {
+    return (
+      <>
+        {ReactDOM.createPortal(<Backdrop onClose={props.onClose} />, portalEl)}
+        {ReactDOM.createPortal(
+          <OverlayModal>{props.children}</OverlayModal>,
+          portalEl
+        )}
+      </>
     );
   };
 };
