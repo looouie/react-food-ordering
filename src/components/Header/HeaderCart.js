@@ -5,7 +5,7 @@ const HeaderCart = (props) => {
   return (
     <button className={classes.button} onClick={props.onClick}>
       <BsCart4 className={classes.cartIcon} />
-      <span className={classes.badge}>0</span>
+      <span className={classes.badge}>{props.totalAmount}</span>
     </button>
   );
 };
