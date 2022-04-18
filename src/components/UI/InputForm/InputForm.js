@@ -1,42 +1,35 @@
 import classes from "./InputForm.module.css";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
-import { useRef } from "react";
+import { useState } from "react";
+import InputField from "../InputField/InputField";
 
 const InputForm = ({ id, addToCart }) => {
-  const amountRef = useRef();
+  const [currentAmount, setCurrentAmount] = useState(0);
 
+  const onChangeHandler = (amount) => {
+    setCurrentAmount(amount);
+  };
   const incrementHandler = () => {
-    let updatedValue = parseInt(amountRef.current.value) + 1;
-    document.getElementById(id).value = updatedValue;
+    setCurrentAmount((currentAmount) => currentAmount + 1);
   };
 
   const decrementHandler = () => {
-    if (amountRef.current.value <= 0) {
+    if (!currentAmount || currentAmount <= 0) {
       return;
+    } else {
+      setCurrentAmount((currentAmount) => currentAmount - 1);
     }
-    let updatedValue = parseInt(amountRef.current.value) - 1;
-    document.getElementById(id).value = updatedValue;
   };
 
   const submitHandler = (event) => {
-    const amountToAdd = parseInt(amountRef.current.value);
     event.preventDefault();
-    addToCart(amountToAdd);
-    // console.log(id + "amount =" + amountRef.current.value);
-    amountRef.current.value = 0;
+    addToCart(currentAmount);
+    setCurrentAmount(0);
   };
 
   return (
     <form className={classes.form} onSubmit={submitHandler}>
-      <input
-        className={classes.input}
-        id={id}
-        type="number"
-        defaultValue="0"
-        min="0"
-        max="99"
-        ref={amountRef}
-      />
+      <InputField id={id} amount={currentAmount} onChange={onChangeHandler} />
 
       <div className={classes.amount}>
         <AiOutlinePlus
