@@ -1,0 +1,27 @@
+li {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: antiquewhite;
+  width: 100%;
+  margin: 0;
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+}
+
+.amount {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  text-align: center;
+  font-size: inherit;
+  width: 2rem;
+  height: 1.5rem;
+  border-radius: 4px;
+  border: 1px solid rgb(148, 147, 147);
+}

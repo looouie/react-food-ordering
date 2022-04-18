@@ -1,6 +1,7 @@
 import classes from "./CartItem.module.css";
 
 const CartItem = (props) => {
+  const { id, name, price, amount } = props.item;
   //id, name, price, amount
 
   //Increament Handler
@@ -8,17 +9,22 @@ const CartItem = (props) => {
   //Decreament Handler
 
   return (
-    <li>
-      <div className="summary">
-        <h2>name</h2>
+    <li key={id}>
+      <div className={classes.summary}>
+        <h3>{name}</h3>
         <div>
-          <span>Price</span>
+          <span>{price}</span>
         </div>
       </div>
-      <div className="input">
-        <span>Amount</span>
-        <button>+</button>
-        <button>-</button>
+      <div className={classes.amount}>
+        <input
+          className={classes.input}
+          id={id}
+          type="number"
+          defaultValue={amount}
+          min="0"
+          max="99"
+        ></input>
       </div>
     </li>
   );

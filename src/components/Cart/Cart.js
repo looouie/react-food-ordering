@@ -14,13 +14,18 @@ const Cart = (props) => {
   };
 
   const CartItems = (
-    <ul className={classes.cartItems}>
+    <ul>
       {cartList.map((item) => {
         return <CartItem item={item} />;
       })}
     </ul>
   );
 
-  return <Overlay onClose={closeCartHandler}>{CartItems}</Overlay>;
+  return (
+    <Overlay onClose={closeCartHandler}>
+      <h2>Shopping Cart</h2>
+      {CartItems}
+    </Overlay>
+  );
 };
 export default Cart;
