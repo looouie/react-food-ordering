@@ -1,27 +1,15 @@
-li {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: antiquewhite;
-  width: 100%;
-  margin: 0;
+.itemContainer {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  /* justify-content: space-around;
+  align-items: center; */
+  background-color: rgb(226, 238, 200);
+  width: auto;
+  margin: 10px 20px;
 }
 
 .summary {
   display: flex;
   align-items: center;
-}
-
-.amount {
-  display: flex;
-  align-items: center;
-}
-
-.input {
-  text-align: center;
-  font-size: inherit;
-  width: 2rem;
-  height: 1.5rem;
-  border-radius: 4px;
-  border: 1px solid rgb(148, 147, 147);
+  justify-content: space-between;
 }
