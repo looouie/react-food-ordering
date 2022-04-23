@@ -31,18 +31,13 @@ const ChangeForm = (props) => {
 
   return (
     <form className={classes.form}>
+      <AiOutlinePlus className={classes.plusMinus} onClick={incrementHandler} />
       <InputField id={id} amount={currentAmount} onChange={onChangeHandler} />
 
-      <div className={classes.amount}>
-        <AiOutlinePlus
-          className={classes.plusMinus}
-          onClick={incrementHandler}
-        />
-        <AiOutlineMinus
-          className={classes.plusMinus}
-          onClick={decrementHandler}
-        />
-      </div>
+      <AiOutlineMinus
+        className={classes.plusMinus}
+        onClick={decrementHandler}
+      />
     </form>
   );
 };
