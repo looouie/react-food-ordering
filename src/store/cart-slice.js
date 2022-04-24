@@ -21,6 +21,8 @@ const cartSlice = createSlice({
       } else {
         targetProduct.amount = targetProduct.amount + productToAdd.amount;
       }
+      const totdalPriceToAdd = productToAdd.price * productToAdd.amount;
+      state.totalPrice = state.totalPrice + totdalPriceToAdd;
       state.totalAmount = state.totalAmount + productToAdd.amount;
     },
     reducerOrRemove: (state, action) => {
@@ -39,6 +41,8 @@ const cartSlice = createSlice({
           return product.id !== targetId;
         });
       }
+      const targetProductPrice = targetProduct.price;
+      state.totalPrice = state.totalPrice - targetProductPrice;
       state.totalAmount--;
     },
   },
