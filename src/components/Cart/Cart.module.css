@@ -2,3 +2,9 @@ ul {
   list-style: none;
   padding-left: 0;
 }
+
+@media (max-width: 795px) {
+  .title {
+    font-size: 1.2rem;
+  }
+}

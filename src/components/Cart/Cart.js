@@ -23,7 +23,7 @@ const Cart = (props) => {
 
   return (
     <Overlay onClose={closeCartHandler}>
-      <h2>Shopping Cart</h2>
+      <h2 className={classes.title}>Shopping Cart</h2>
       {CartItems}
     </Overlay>
   );
