@@ -3,7 +3,7 @@
   grid-template-columns: 2fr 1fr;
   /* justify-content: space-around;
   align-items: center; */
-  background-color: rgb(226, 238, 200);
+  background-color: #fefae0;
   width: auto;
   margin: 10px 20px;
 }
