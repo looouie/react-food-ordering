@@ -14,14 +14,19 @@
   justify-content: space-between;
 }
 
+.name {
+  margin-left: 20px;
+}
+
 .amount {
   display: flex;
   justify-content: center;
 }
 
 @media (max-width: 795px) {
-  .summary h3 {
+  .name {
     font-size: 1rem;
+    margin-left: 10px;
   }
 
   .summary {
