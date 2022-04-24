@@ -20,7 +20,11 @@
 @media (max-width: 795px) {
   .productImage img {
     width: 8rem;
-    height: 70%;
+    height: auto;
+  }
+
+  .productDescription {
+    font-size: 0.8rem;
   }
 }
 
