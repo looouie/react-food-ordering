@@ -29,3 +29,10 @@
 .overlayContent {
   text-align: center;
 }
+
+@media (max-width: 795px) {
+  .overlayModal {
+    width: 80%;
+    left: 10%;
+  }
+}
