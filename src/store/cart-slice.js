@@ -16,8 +16,6 @@ const cartSlice = createSlice({
       });
       const targetProduct = state.products[findExisting];
 
-      // let newProducts = [];
-
       if (!targetProduct) {
         state.products.push(productToAdd);
       } else {
@@ -26,7 +24,7 @@ const cartSlice = createSlice({
       state.totalAmount = state.totalAmount + productToAdd.amount;
     },
     reducerOrRemove: (state, action) => {
-      const targetId = action.payload; //product id
+      const targetId = action.payload.id; //product id
 
       const findExisting = state.products.findIndex((item) => {
         return item.id === targetId;
