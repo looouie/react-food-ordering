@@ -29,13 +29,12 @@ const InputForm = ({ id, addToCart }) => {
 
   return (
     <form className={classes.form} onSubmit={submitHandler}>
-      <InputField id={id} amount={currentAmount} onChange={onChangeHandler} />
-
       <div className={classes.amount}>
         <AiOutlinePlus
           className={classes.plusMinus}
           onClick={incrementHandler}
         />
+        <InputField id={id} amount={currentAmount} onChange={onChangeHandler} />
         <AiOutlineMinus
           className={classes.plusMinus}
           onClick={decrementHandler}

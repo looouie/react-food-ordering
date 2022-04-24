@@ -18,3 +18,13 @@
   display: flex;
   justify-content: center;
 }
+
+@media (max-width: 795px) {
+  .summary h3 {
+    font-size: 1rem;
+  }
+
+  .summary {
+    font-size: 0.8rem;
+  }
+}
