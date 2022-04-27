@@ -21,7 +21,8 @@ const cartSlice = createSlice({
       } else {
         targetProduct.amount = targetProduct.amount + productToAdd.amount;
       }
-      const totdalPriceToAdd = productToAdd.price * productToAdd.amount;
+      const totdalPriceToAdd =
+        parseInt(productToAdd.price) * parseInt(productToAdd.amount);
       state.totalPrice = state.totalPrice + totdalPriceToAdd;
       state.totalAmount = state.totalAmount + productToAdd.amount;
     },
