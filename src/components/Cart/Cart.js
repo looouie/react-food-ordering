@@ -23,6 +23,8 @@ const Cart = (props) => {
     </ul>
   );
 
+  const cartIsEmpty = cartList.length === 0;
+
   return (
     <Overlay onClose={closeCartHandler}>
       <div className={classes.container}>
@@ -32,7 +34,7 @@ const Cart = (props) => {
 
         {CartItems}
         <div className={classes.total}>
-          {cartList.length === 0 ? (
+          {cartIsEmpty ? (
             <span>Cart is empty</span>
           ) : (
             <>
@@ -40,6 +42,10 @@ const Cart = (props) => {
               <span className={classes.totalPrice}>$ {totalPrice}</span>
             </>
           )}
+        </div>
+        <div className={classes.buttons}>
+          <button>Close</button>
+          <button>Order</button>
         </div>
       </div>
     </Overlay>
