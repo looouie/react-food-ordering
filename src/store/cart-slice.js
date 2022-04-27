@@ -15,16 +15,19 @@ const cartSlice = createSlice({
         return item.id === productToAdd.id;
       });
       const targetProduct = state.products[findExisting];
+      let targetPrice;
 
       if (!targetProduct) {
         state.products.push(productToAdd);
+        targetPrice = parseInt(productToAdd.price);
       } else {
         targetProduct.amount = targetProduct.amount + productToAdd.amount;
+        targetPrice = targetProduct.price;
       }
-      const totdalPriceToAdd =
-        parseInt(productToAdd.price) * parseInt(productToAdd.amount);
+      const totdalPriceToAdd = targetPrice * parseInt(productToAdd.amount);
       state.totalPrice = state.totalPrice + totdalPriceToAdd;
-      state.totalAmount = state.totalAmount + parseInt(productToAdd.amount);
+      state.totalAmount =
+        parseInt(state.totalAmount) + parseInt(productToAdd.amount);
     },
     reducerOrRemove: (state, action) => {
       const targetId = action.payload.id; //product id
