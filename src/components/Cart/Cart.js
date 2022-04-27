@@ -31,16 +31,16 @@ const Cart = (props) => {
         </div>
 
         {CartItems}
-        {cartList.length === 0 ? (
-          <div className={classes.total}>
+        <div className={classes.total}>
+          {cartList.length === 0 ? (
             <span>Cart is empty</span>
-          </div>
-        ) : (
-          <div className={classes.total}>
-            <span>Total Price: </span>
-            <span className={classes.totalPrice}>$ {totalPrice}</span>
-          </div>
-        )}
+          ) : (
+            <>
+              <span>Total Price: </span>
+              <span className={classes.totalPrice}>$ {totalPrice}</span>
+            </>
+          )}
+        </div>
       </div>
     </Overlay>
   );
