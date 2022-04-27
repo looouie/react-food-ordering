@@ -43,10 +43,12 @@ const Cart = (props) => {
             </>
           )}
         </div>
-        <div className={classes.buttons}>
-          <button>Close</button>
-          <button>Order</button>
-        </div>
+        {!cartIsEmpty && (
+          <div className={classes.buttons}>
+            <button>Close</button>
+            <button>Order</button>
+          </div>
+        )}
       </div>
     </Overlay>
   );
