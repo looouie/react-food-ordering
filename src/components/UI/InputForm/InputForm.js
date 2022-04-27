@@ -23,6 +23,9 @@ const InputForm = ({ id, addToCart }) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    if (currentAmount === 0) {
+      return;
+    }
     addToCart(currentAmount);
     setCurrentAmount(0);
   };
