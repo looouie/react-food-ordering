@@ -4,6 +4,7 @@ import CartItem from "./CartItem/CartItem";
 import { BsCart4 } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { showCartActions } from "../../store/showCart-slice";
+import { cartActions } from "../../store/cart-slice";
 import { useState } from "react";
 
 const Cart = (props) => {
@@ -23,6 +24,7 @@ const Cart = (props) => {
 
     setTimeout(() => {
       setIsLoading(false);
+      dispatch(cartActions.reset());
       closeCartHandler();
     }, 3000);
   };
