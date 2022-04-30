@@ -9,6 +9,7 @@ import { useState } from "react";
 const Cart = (props) => {
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
+  const [orderPlaced, setOrderPlaced] = useState(false);
 
   const cartList = useSelector((state) => state.cart.products);
   const totalPrice = useSelector((state) => state.cart.totalPrice);
@@ -18,12 +19,12 @@ const Cart = (props) => {
   };
 
   const submitHandler = () => {
-    console.log("order has been placed");
     setIsLoading(true);
 
     setTimeout(() => {
       setIsLoading(false);
-    }, 50000);
+      closeCartHandler();
+    }, 3000);
   };
 
   const CartItems = (
@@ -36,14 +37,8 @@ const Cart = (props) => {
 
   const cartIsEmpty = cartList.length === 0;
 
-  const LoadingSpinner = (
-    <div className={classes.ldsRing}>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  );
+  const LoadingSpinner = <div className={classes.loader}></div>;
+  const orderHasBeenPlaced = <span>Order has been place</span>;
 
   return (
     <Overlay onClose={closeCartHandler}>
@@ -52,13 +47,11 @@ const Cart = (props) => {
         <div className={classes.title}>
           <BsCart4 className={classes.titleIcon} />
         </div>
-        {cartIsEmpty ? (
-          <span className={classes.empty}>Cart is empty</span>
-        ) : (
-          ""
-        )}
-        {!cartIsEmpty && CartItems}
-        {!cartIsEmpty && (
+        {cartIsEmpty ? <div className={classes.empty}>Cart is empty</div> : ""}
+        {isLoading && LoadingSpinner}
+        {orderPlaced && orderHasBeenPlaced}
+        {!cartIsEmpty && !isLoading && CartItems}
+        {!cartIsEmpty && !isLoading && (
           <>
             <div className={classes.total}>
               <span>Total Price: </span>
@@ -71,7 +64,6 @@ const Cart = (props) => {
           </>
         )}
       </div>
-      <div className={classes.container}>{LoadingSpinner}</div>
     </Overlay>
   );
 };
