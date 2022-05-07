@@ -29,6 +29,18 @@ const CartForm = () => {
     minutes.push(minute);
   }
 
+  // handle submit
+  // dispatch hideCart Action
+  // loader
+  // dummy message show "order successfully - comfirm with sms etc."
+  const submitHandler = (event) => {
+    console.log(event);
+  };
+  // dispatch hideCart Action
+  const hideCartHandler = () => {
+    console.log("hide");
+  };
+
   return (
     <Overlay>
       <div className={classes.container}>
@@ -69,8 +81,8 @@ const CartForm = () => {
             </div>
           </div>
           <div className={classes.buttons}>
-            <button>Submit</button>
-            <button>Cancel</button>
+            <button onClick={submitHandler}>Submit</button>
+            <button onclick={hideCartHandler}>Cancel</button>
           </div>
         </form>
       </div>
