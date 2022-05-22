@@ -1,15 +1,25 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 import CartList from "./CartList/CartList";
 import CartForm from "./CartForm/CartForm";
 import Loader from "../UI/Loader/Loader";
+
+import { placeOrder } from "../../lib/api";
+import { useHttp } from "../../hooks/UseHttp";
 
 const Cart = (props) => {
   const [step1, setStep1] = useState(true);
   const [step2, setStep2] = useState(false);
 
   const [isLoading, setIsLoading] = useState(false);
-  const [submitOrder, setSubmitOrder] = useState(false);
+  const [order, setOrder] = useState({
+    orderList: "",
+    customerDetails: "",
+  });
+
+  // const cartList = useSelector((state) => state.cart.products);
+  const { sendRequest, data, error, status } = useHttp(placeOrder);
 
   const showCartList = () => {
     setStep2(true);
@@ -31,8 +41,16 @@ const Cart = (props) => {
     setIsLoading(!isLoading);
   };
 
+  const orderList = (products) => {
+    setOrder({ ...order, orderList: products });
+  };
+
+  const customerInfo = (details) => {
+    setOrder({ ...order, customerDetails: details });
+  };
+
   const submitHandler = () => {
-    setSubmitOrder(true);
+    sendRequest(order.orderList, order.customerDetails);
   };
 
   // add a successful screen
