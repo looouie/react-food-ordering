@@ -9,7 +9,7 @@ const CartForm = () => {
   const dispatch = useDispatch();
 
   // dispatch hideCart Action - okay
-  // loader
+  // loader - habdle in Cart
   // dummy message show "order successfully - comfirm with sms etc."
   const submitHandler = (event) => {
     console.log(event);
@@ -61,11 +61,11 @@ const CartForm = () => {
             </div>
           </div>
           <div className={classes.buttons}>
-            <button type="submit" onClick={submitHandler}>
-              Submit
-            </button>
             <button type="button" onClick={hideCartHandler}>
               Cancel
+            </button>
+            <button type="submit" onClick={submitHandler}>
+              Submit
             </button>
           </div>
         </form>
