@@ -39,7 +39,12 @@ const Cart = (props) => {
   };
 
   const submitHandler = (details) => {
-    sendRequest(products, details);
+    const body = {
+      products: products,
+      customerDetail: details,
+    };
+    sendRequest(body);
+    console.log(details);
     console.log("request sent");
   };
 
