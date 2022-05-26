@@ -19,7 +19,7 @@ const CartForm = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log(nameRef.target.value);
+    console.log(nameRef.current.value);
     console.log(phoneRef.current.value);
     console.log(pickupDateRef.current.value);
 
