@@ -1,7 +1,7 @@
-const ApiKey =
-  "https://louie-bakery-default-rtdb.europe-west1.firebasedatabase.app/";
+const apiKey =
+  "https://louie-bakery-default-rtdb.europe-west1.firebasedatabase.app/order.json";
 
-const placeOrder = async (products, customer) => {
+export const placeOrder = async (products, customer) => {
   // ordernumber: something ++
   // products id, price, name, amount
   // customer detail: name, phone, pickup time
@@ -9,17 +9,13 @@ const placeOrder = async (products, customer) => {
   // temp solution
   const orderNo = Math.floor(100000000 + Math.random() * 900000000);
 
-  const response = await fetch(
-    ApiKey,
-    { method: "POST" },
-    {
-      body: {
-        orderNo,
-        products,
-        customer,
-      },
-    }
-  );
+  const response = await fetch(apiKey, {
+    method: "POST",
+    body: JSON.stringify({ orderNo: { products, customer } }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 
   if (!response.ok) {
     throw new Error("Order Fail!");
