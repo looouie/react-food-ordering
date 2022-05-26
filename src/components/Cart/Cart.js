@@ -6,19 +6,16 @@ import CartForm from "./CartForm/CartForm";
 import Loader from "../UI/Loader/Loader";
 
 import { placeOrder } from "../../lib/api";
-import { useHttp } from "../../hooks/UseHttp";
+import useHttp from "../../hooks/UseHttp";
 
 const Cart = (props) => {
+  const products = useSelector((state) => state.cart.products);
+
   const [step1, setStep1] = useState(true);
   const [step2, setStep2] = useState(false);
 
   const [isLoading, setIsLoading] = useState(false);
-  const [order, setOrder] = useState({
-    orderList: "",
-    customerDetails: "",
-  });
 
-  // const cartList = useSelector((state) => state.cart.products);
   const { sendRequest, data, error, status } = useHttp(placeOrder);
 
   const showCartList = () => {
@@ -41,16 +38,9 @@ const Cart = (props) => {
     setIsLoading(!isLoading);
   };
 
-  const orderList = (products) => {
-    setOrder({ ...order, orderList: products });
-  };
-
-  const customerInfo = (details) => {
-    setOrder({ ...order, customerDetails: details });
-  };
-
-  const submitHandler = () => {
-    sendRequest(order.orderList, order.customerDetails);
+  const submitHandler = (details) => {
+    sendRequest(products, details);
+    console.log("request sent");
   };
 
   // add a successful screen
