@@ -38,8 +38,8 @@ const CartForm = (props) => {
       pickupTime: `${pickupHourRef.current.value} : ${pickupMinRef.current.value}`,
     };
 
-    dispatch(showCartActions.setHideCart());
-
+    // dispatch(showCartActions.setHideCart());
+    hideModal();
     onSubmit(details);
     // console.log(details);
   };
