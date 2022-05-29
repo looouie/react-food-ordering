@@ -4,8 +4,6 @@ import CartItem from "../CartItem/CartItem";
 import { BsCart4 } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { showCartActions } from "../../../store/showCart-slice";
-import { cartActions } from "../../../store/cart-slice";
-import { useState } from "react";
 
 const CartList = (props) => {
   const { hideModal, showNext } = props;
@@ -19,19 +17,10 @@ const CartList = (props) => {
     dispatch(showCartActions.setHideCart());
   };
 
-  //   const submitHandler = () => {
-  //     setIsLoading(true);
-
-  //     setTimeout(() => {
-  //       setIsLoading(false);
-  //       dispatch(cartActions.reset());
-  //       closeCartHandler();
-  //     }, 3000);
-  //   };
-
   const submitHandler = () => {
     hideModal();
     showNext();
+    console.log(cartList);
   };
 
   const CartItems = (
