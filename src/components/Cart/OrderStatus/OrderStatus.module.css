@@ -23,12 +23,16 @@
 .status {
   font-size: 3rem;
 }
-.succeed {
+.success {
   color: rgba(58, 170, 41, 0.819);
 }
 
 .fail {
   color: rgba(205, 48, 30, 0.819);
+}
+
+.unknown {
+  color: rgba(83, 63, 174);
 }
 
 .buttons button {
