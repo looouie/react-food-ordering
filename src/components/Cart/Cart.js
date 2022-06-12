@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import CartList from "./CartList/CartList";
 import CartForm from "./CartForm/CartForm";
 import Loader from "../UI/Loader/Loader";
+import OrderStatus from "./OrderStatus/OrderStatus";
 
 import { placeOrder } from "../../lib/api";
-import useHttp from "../../hooks/UseHttp";
 
 import { cartActions } from "../../store/cart-slice.js";
 
@@ -18,9 +18,9 @@ const Cart = (props) => {
   const [step2, setStep2] = useState(false);
 
   const [isLoading, setIsLoading] = useState(false);
-  const [isOrdered, setIsOrdered] = useState(false);
 
-  const { sendRequest, status } = useHttp(placeOrder);
+  const [orderStatus, setOrderStatus] = useState(false);
+  const [orderId, setOrderId] = useState("");
 
   const showCartList = () => {
     setStep2(true);
@@ -38,26 +38,41 @@ const Cart = (props) => {
     setStep2(false);
   };
 
-  const submitHandler = (details) => {
+  const hideOrderStatus = () => {
+    setOrderStatus(false);
+  };
+
+  const submitHandler = async (details) => {
     const body = {
       products: products,
       customerDetail: details,
     };
     setIsLoading(true);
-    sendRequest(body);
+    const data = await placeOrder(body);
+    // await sendRequest(body);
+    console.log(data);
 
-    setTimeout(() => {
-      setIsLoading(false);
+    setIsLoading(false);
+
+    if (data?.name) {
+      setOrderId(data.name);
       dispatch(cartActions.reset());
-    }, 2000);
+    }
+    setOrderStatus(true);
   };
 
-  // Todo: add a successful screen
   return (
     <>
       {step1 && <CartList hideModal={hideCartList} showNext={showCartForm} />}
       {step2 && <CartForm hideModal={hideCartForm} onSubmit={submitHandler} />}
       {isLoading && <Loader />}
+      {orderStatus && (
+        <OrderStatus
+          hideModal={hideOrderStatus}
+          status={orderId ? "success" : "fail"}
+          orderId={orderId}
+        />
+      )}
     </>
   );
 };
