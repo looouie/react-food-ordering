@@ -19,9 +19,6 @@ const CartForm = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log(nameRef.current.value);
-    console.log(phoneRef.current.value);
-    console.log(pickupDateRef.current.value);
 
     if (
       nameRef.current.value.trim() === "" ||
@@ -38,14 +35,11 @@ const CartForm = (props) => {
       pickupTime: `${pickupHourRef.current.value} : ${pickupMinRef.current.value}`,
     };
 
-    // dispatch(showCartActions.setHideCart());
     hideModal();
     onSubmit(details);
-    // console.log(details);
   };
 
   const hideCartHandler = () => {
-    console.log("clicked");
     dispatch(showCartActions.setHideCart());
   };
 
