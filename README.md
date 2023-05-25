@@ -1,4 +1,4 @@
-# FOod Ordering
+# Food Ordering
 This project is a simple food ordering app using React JS 
 
 Welcome to visit here
